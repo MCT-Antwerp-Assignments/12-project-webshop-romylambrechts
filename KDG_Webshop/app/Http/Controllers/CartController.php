@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-
-
     public function index()
     {
         $cart = session()->get('cart', []);
@@ -31,8 +29,7 @@ class CartController extends Controller
 
         session()->put('cart', $cart);
 
-        return redirect('/cart');
-
+        return redirect()->back();
     }
 
     public function remove(Request $request)
@@ -44,5 +41,4 @@ class CartController extends Controller
     {
         // aantal aanpasse
     }
-
 }
