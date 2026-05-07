@@ -9,52 +9,55 @@ class CartController extends Controller
     public function index()
     {
         $cart = session()->get('cart', []);
-        $productIds = array_keys($cart);
-        $products = \App\Models\Product::whereIn('id', $productIds)->get();
-
+        $total = collect($cart)->sum(function ($item) {
+            return $item['price'] * $item['quantity'];
+        });
         return view('cart', [
             'cart' => $cart,
-            'products' => $products
+            'total' => $total
         ]);
     }
 
     public function add(Request $request)
     {
-        $id = $request->product_id;
-
+        $product = \App\Models\Product::findOrFail($request->product_id);
         $cart = session()->get('cart', []);
 
-        if (isset($cart[$id])) {
-            $cart[$id]++;
+        if (isset($cart[$product->id])) {
+            $cart[$product->id]['quantity']++;
         } else {
-            $cart[$id] = 1;
+            $cart[$product->id] = [
+                'id' => $product->id,
+                'name' => $product->name,
+                'price' => $product->price,
+                'image' => $product->image ?? 'default.jpg',
+                'quantity' => 1
+            ];
         }
-
         session()->put('cart', $cart);
-
-        return redirect()->back();
+        return back();
     }
 
-    public function remove(Request $request)
+    public function delete(Request $request)
     {
-        $id = $request->product_id;
         $cart = session()->get('cart', []);
-        unset($cart[$id]);
+        unset($cart[$request->product_id]);
+        
         session()->put('cart', $cart);
-        return redirect()->back();
+
+        return back();
     }
 
     public function update(Request $request)
     {
-        $id = $request->product_id;
-        $quantity = $request->quantity;
         $cart = session()->get('cart', []);
-        if ($quantity <= 0) {
-            unset($cart[$id]);
-        } else {
-            $cart[$id] = $quantity;
+        $id = $request->product_id;
+
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity'] = max(1, (int) $request->quantity);
         }
         session()->put('cart', $cart);
-        return redirect()->back();
+
+        return back();
     }
 }
