@@ -34,11 +34,24 @@ class CartController extends Controller
 
     public function remove(Request $request)
     {
-        // verwijdere
+        $id = $request->product_id;
+        $cart = session()->get('cart', []);
+        unset($cart[$id]);
+        session()->put('cart', $cart);
+        return redirect()->back();
     }
 
     public function update(Request $request)
     {
-        // aantal aanpasse
+        $id = $request->product_id;
+        $quantity = $request->quantity;
+        $cart = session()->get('cart', []);
+        if ($quantity <= 0) {
+            unset($cart[$id]);
+        } else {
+            $cart[$id] = $quantity;
+        }
+        session()->put('cart', $cart);
+        return redirect()->back();
     }
 }
