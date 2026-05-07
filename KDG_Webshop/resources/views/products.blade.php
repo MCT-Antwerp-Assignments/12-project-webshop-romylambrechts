@@ -17,3 +17,12 @@
     </div>
 @endforeach
 
+<form method="POST" action="/cart/add">
+    @csrf
+
+    <input type="hidden" name="product_id" value="{{ $product->id }}">
+
+    <button type="submit">
+        Add to cart
+    </button>
+</form>
