@@ -13,6 +13,12 @@ class ContactController extends Controller
 
     public function send(Request $request)
     {
-        // email sture
+        $request->validate([
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+        
+        return back()->with('success', 'Message sent successfully!');
     }
 }

@@ -19,5 +19,5 @@ Route::post('/cart/update', [CartController::class, 'update']);
 Route::get('/checkout', [OrderController::class, 'checkout']);
 Route::post('/checkout', [OrderController::class, 'store']);
 
-Route::get('/contact', [ContactController::class, 'index']);
-Route::post('/contact', [ContactController::class, 'send']);
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
