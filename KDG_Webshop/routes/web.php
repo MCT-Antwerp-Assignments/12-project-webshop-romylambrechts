@@ -6,7 +6,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ContactController;
 
-Route::get('/', [ProductController::class, 'index']);
+Route::get('/', [ProductController::class, 'home']);
+Route::get('/products', [ProductController::class, 'index']);
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
 Route::get('/cart', [CartController::class, 'index']);

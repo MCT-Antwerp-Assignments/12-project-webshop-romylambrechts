@@ -6,6 +6,11 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+    public function home()
+    {
+        return view('home');
+    }
+
     public function index()
     {
         $products = Product::all();
