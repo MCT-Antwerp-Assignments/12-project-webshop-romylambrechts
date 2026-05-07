@@ -9,9 +9,12 @@ class CartController extends Controller
     public function index()
     {
         $cart = session()->get('cart', []);
+        $productIds = array_keys($cart);
+        $products = \App\Models\Product::whereIn('id', $productIds)->get();
 
         return view('cart', [
-            'cart' => $cart
+            'cart' => $cart,
+            'products' => $products
         ]);
     }
 
