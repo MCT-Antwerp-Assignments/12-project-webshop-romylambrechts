@@ -38,11 +38,12 @@ class CartController extends Controller
         return back();
     }
 
-    public function delete(Request $request)
+    public function remove(Request $request)
     {
         $cart = session()->get('cart', []);
-        unset($cart[$request->product_id]);
-        
+        $id = $request->product_id;
+
+        unset($cart[$id]);
         session()->put('cart', $cart);
 
         return back();
