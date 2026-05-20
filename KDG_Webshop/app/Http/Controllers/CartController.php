@@ -30,7 +30,7 @@ class CartController extends Controller
                 'id' => $product->id,
                 'name' => $product->name,
                 'price' => $product->price,
-                'image' => $product->image ?? 'default.jpg',
+                'image' => explode(',', $product->photo)[0] ?? 'default.jpg',
                 'quantity' => 1
             ];
         }
