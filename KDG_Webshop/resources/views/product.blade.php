@@ -35,6 +35,7 @@
                 </div>
 
                 <div>
+                    <br>
                     <div class="text-2xl font-semibold text-gray-900">
                         € {{ $product->price }}
                     </div>
@@ -63,6 +64,7 @@
                             Add to cart
                         </button>
                     </form>
+                    <br>
                 </div>
                 </section>
             </div>

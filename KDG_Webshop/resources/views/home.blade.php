@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="bg-white">
-    <div class="relative overflow-hidden bg-white">
+    <div class="bg-gray-200">
       <div class="pt-16 pb-20 sm:pt-24 sm:pb-32 lg:pt-32 lg:pb-40">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="flex items-center justify-between">
@@ -28,6 +28,8 @@
         </div>
       </div>
     </div>
+
+    <br>
 
     <div class="mx-auto max-w-7xl px-6 lg:px-8 pb-20">
       <h2 class="text-2xl font-bold text-gray-900 mb-6">
