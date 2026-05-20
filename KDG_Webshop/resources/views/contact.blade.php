@@ -9,6 +9,7 @@
             <p class="mt-4 text-sm text-gray-500">
                 Got a technical issue? Want to send feedback? Need more details? Let us know.
             </p>
+            <br>
             @if(session('success'))
                 <div class="mb-6 rounded-md bg-green-100 p-4 text-green-700">
                     {{ session('success') }}
