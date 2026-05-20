@@ -17,9 +17,10 @@
                                 <div class="ml-6 flex flex-1 flex-col justify-between">
                                     <div class="flex justify-between">
                                         <div>
-                                            <h3 class="text-sm font-medium text-gray-700">
+                                            <a href="/product/{{ $cartItem['id'] }}"
+                                                class="text-sm font-medium text-gray-700 hover:text-gray-400">
                                                 {{ $cartItem['name'] }}
-                                            </h3>
+                                            </a>
 
                                             <p class="mt-1 text-sm text-gray-500">
                                                 Quantity: {{ $cartItem['quantity'] }}
