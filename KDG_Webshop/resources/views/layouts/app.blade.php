@@ -26,3 +26,38 @@
 
 </body>
 </html>
+
+<footer class="bg-gray-900 text-white mt-20">
+    <div class="mx-auto max-w-7xl px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <div>
+            <h3 class="text-lg font-semibold">KDG Shop</h3>
+            <p class="mt-2 text-gray-400 text-sm">
+                Exclusive student webshop.
+            </p>
+        </div>
+
+        <div>
+            <h3 class="text-lg font-semibold">Contact</h3>
+            <p class="mt-2 text-gray-400 text-sm">
+                Email: info@kdgshop.be<br>
+                Phone: +32 000 00 00 00
+            </p>
+        </div>
+
+        <div>
+            <h3 class="text-lg font-semibold">Links</h3>
+            <ul class="mt-2 space-y-2 text-gray-400 text-sm">
+                <li><a href="/" class="hover:text-white">Home</a></li>
+                <li><a href="/products" class="hover:text-white">Products</a></li>
+                <li><a href="/cart" class="hover:text-white">Cart</a></li>
+                <li><a href="/contact" class="hover:text-white">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="border-t border-gray-700 text-center py-4 text-gray-500 text-sm">
+        © {{ date('Y') }} KDG Shop. All rights reserved.
+    </div>
+
+</footer>
