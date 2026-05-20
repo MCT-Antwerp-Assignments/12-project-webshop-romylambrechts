@@ -25,6 +25,12 @@
                                             <p class="mt-1 text-sm text-gray-500">
                                                 Quantity: {{ $cartItem['quantity'] }}
                                             </p>
+
+                                            @if(!empty($cartItem['size']))
+                                                <p class="text-xs text-gray-500">
+                                                    Size: {{ $cartItem['size'] }}
+                                                </p>
+                                            @endif
                                         </div>
 
                                         <p class="text-sm font-medium text-gray-900">
@@ -80,7 +86,7 @@
                         class="mt-6 block w-full rounded-md bg-indigo-600 px-6 py-3 text-center text-white font-medium hover:bg-indigo-700">
                         Pay
                     </a>
-
+                    <br><br>
                 </section>
             </div>
         </main>

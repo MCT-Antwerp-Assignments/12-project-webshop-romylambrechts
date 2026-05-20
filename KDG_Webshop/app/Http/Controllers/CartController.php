@@ -23,6 +23,8 @@ class CartController extends Controller
         $product = \App\Models\Product::findOrFail($request->product_id);
         $cart = session()->get('cart', []);
 
+        $size = $request->size; 
+
         if (isset($cart[$product->id])) {
             $cart[$product->id]['quantity']++;
         } else {
