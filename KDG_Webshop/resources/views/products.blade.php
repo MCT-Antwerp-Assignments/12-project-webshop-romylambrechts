@@ -11,9 +11,21 @@
         @foreach($products as $product)
 
           <div class="group relative border p-3 rounded-lg">
-            <img src="{{ asset('storage/products/' . $product->photo) }}"
-              class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:h-80"
-              alt="{{ $product->name }}">
+            @php
+              $photos = explode(',', $product->photo);
+            @endphp
+
+            <div class="relative overflow-hidden rounded-md">
+
+              @foreach($photos as $index => $photo)
+
+                <img src="{{ asset('storage/products/' . trim($photo)) }}"
+                  class="product-image aspect-square w-full object-cover lg:h-80 {{ $index != 0 ? 'hidden' : '' }}"
+                  alt="{{ $product->name }}">
+
+              @endforeach
+
+            </div>
             <div class="mt-4 flex justify-between">
               <div>
                 <h3 class="text-sm text-gray-700">
@@ -45,4 +57,28 @@
       </div>
     </div>
   </div>
+  <script>
+    document.querySelectorAll('.group').forEach(group => {      //foto carrousel
+
+      const images = group.querySelectorAll('.product-image');
+
+      let current = 0;
+
+      if (images.length > 1) {
+
+        setInterval(() => {
+
+          images[current].classList.add('hidden');
+
+          current = (current + 1) % images.length;
+
+          images[current].classList.remove('hidden');
+
+        }, 2000);
+
+      }
+
+    });
+  </script>
+
 @endsection
