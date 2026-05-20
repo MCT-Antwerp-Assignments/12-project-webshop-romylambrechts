@@ -8,7 +8,7 @@
                 </h1>
                 <section aria-labelledby="cart-heading" class="mt-10">
                     <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
-                    <ul role="list" class="divide-y divide-gray-200 border-y border-gray-200">
+                    <ul role="list" class="border-t border-gray-200">
 
                         @forelse($cart as $cartItem)
                             <li class="flex py-10">
@@ -69,7 +69,18 @@
                                 Your shopping cart is empty.
                             </li>
                         @endforelse
+
                     </ul>
+                    <div class="mt-10 border-t pt-6 flex justify-between text-lg font-semibold">
+                        <span>Total</span>
+                        <span>€ {{ number_format($total, 2) }}</span>
+                    </div>
+
+                    <a href="/checkout"
+                        class="mt-6 block w-full rounded-md bg-indigo-600 px-6 py-3 text-center text-white font-medium hover:bg-indigo-700">
+                        Pay
+                    </a>
+
                 </section>
             </div>
         </main>
