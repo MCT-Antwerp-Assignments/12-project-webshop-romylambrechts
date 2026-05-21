@@ -14,9 +14,8 @@
             @php
               $photos = explode(',', $product->photo);
             @endphp
-
             <div class="relative overflow-hidden rounded-md">
-
+              
               @foreach($photos as $index => $photo)
 
                 <img src="{{ asset('storage/products/' . trim($photo)) }}"
@@ -61,23 +60,15 @@
     document.querySelectorAll('.group').forEach(group => {      //foto carrousel
 
       const images = group.querySelectorAll('.product-image');
-
       let current = 0;
 
       if (images.length > 1) {
-
         setInterval(() => {
-
           images[current].classList.add('hidden');
-
           current = (current + 1) % images.length;
-
           images[current].classList.remove('hidden');
-
         }, 2000);
-
       }
-
     });
   </script>
 

@@ -5,7 +5,6 @@
     <main class="mx-auto max-w-7xl px-8">
         <div class="mx-auto max-w-4xl pt-16">
             <h1 class="text-3xl font-bold tracking-tight text-gray-900">Contact Us</h1>
-
             <p class="mt-4 text-sm text-gray-500">
                 Got a technical issue? Want to send feedback? Need more details? Let us know.
             </p>
@@ -61,6 +60,7 @@
                     </a>
                 </p>
             </form>
+            <br>
         </div>
     </main>
 </div>

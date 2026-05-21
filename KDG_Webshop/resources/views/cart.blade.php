@@ -97,12 +97,12 @@
                     <input type="text" name="zip" placeholder="ZIP" class="border p-2 w-full mb-2" required>
                     <input type="text" name="city" placeholder="City" class="border p-2 w-full mb-2" required>
                     <input type="text" name="country" placeholder="Country" class="border p-2 w-full mb-2" required>
-                    <a href="{{ route('payment.pay') }}"
-                        class="mt-6 block w-full rounded-md bg-indigo-600 px-4 py-3 text-center text-white hover:bg-indigo-700">
+                    <br><br>
+                    <button class="w-full bg-black text-white py-3 rounded">
                         Pay
-                    </a>
+                    </button>
                 </form>
-                <br>
+                <br><br>
             </div>
         </main>
     </div>

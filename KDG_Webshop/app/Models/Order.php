@@ -15,4 +15,11 @@ class Order extends Model
     {
         return $this->hasMany(OrderLine::class);
     }
+
+    protected $fillable = [
+        'customer_id',
+        'paid',
+        'total_price',
+        'mollie_id'
+    ];
 }
