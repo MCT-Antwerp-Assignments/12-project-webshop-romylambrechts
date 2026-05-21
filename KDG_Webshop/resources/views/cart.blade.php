@@ -75,19 +75,34 @@
                                 Your shopping cart is empty.
                             </li>
                         @endforelse
-
                     </ul>
                     <div class="mt-10 border-t pt-6 flex justify-between text-lg font-semibold">
                         <span>Total</span>
                         <span>€ {{ number_format($total, 2) }}</span>
                     </div>
+                </section>
 
-                    <a href="/checkout"
-                        class="mt-6 block w-full rounded-md bg-indigo-600 px-6 py-3 text-center text-white font-medium hover:bg-indigo-700">
+                <form method="POST" action="{{ route('payment.pay') }}" class="mt-10 border-t pt-6">
+                    @csrf
+                    <br>
+                    <h2 class="text-lg font-semibold mb-4">Checkout data</h2>
+                    <input type="text" name="firstname" placeholder="First name" class="border p-2 w-full mb-2" required>
+                    <input type="text" name="lastname" placeholder="Last name" class="border p-2 w-full mb-2" required>
+                    <input type="email" name="email" placeholder="Email" class="border p-2 w-full mb-2" required>
+
+                    <input type="text" name="street" placeholder="Street" class="border p-2 w-full mb-2" required>
+                    <input type="text" name="nr" placeholder="Nr" class="border p-2 w-full mb-2" required>
+                    <input type="text" name="box" placeholder="Box (optional)" class="border p-2 w-full mb-2">
+
+                    <input type="text" name="zip" placeholder="ZIP" class="border p-2 w-full mb-2" required>
+                    <input type="text" name="city" placeholder="City" class="border p-2 w-full mb-2" required>
+                    <input type="text" name="country" placeholder="Country" class="border p-2 w-full mb-2" required>
+                    <a href="{{ route('payment.pay') }}"
+                        class="mt-6 block w-full rounded-md bg-indigo-600 px-4 py-3 text-center text-white hover:bg-indigo-700">
                         Pay
                     </a>
-                    <br><br>
-                </section>
+                </form>
+                <br>
             </div>
         </main>
     </div>
