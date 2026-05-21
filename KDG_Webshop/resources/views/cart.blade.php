@@ -86,6 +86,11 @@
                     @csrf
                     <br>
                     <h2 class="text-lg font-semibold mb-4">Checkout data</h2>
+                    @if(session('error'))
+                        <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     <input type="text" name="firstname" placeholder="First name" class="border p-2 w-full mb-2" required>
                     <input type="text" name="lastname" placeholder="Last name" class="border p-2 w-full mb-2" required>
                     <input type="email" name="email" placeholder="Email" class="border p-2 w-full mb-2" required>

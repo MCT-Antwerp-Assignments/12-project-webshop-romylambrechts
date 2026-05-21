@@ -16,6 +16,14 @@ class PaymentController extends Controller
             $item['price'] * $item['quantity']
         );
 
+        $existingCustomer = Customer::where('email', $request->email)->first();
+
+        if ($existingCustomer) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Emailadres bestaat al');
+        }
+
         $customer = Customer::create([
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,
@@ -66,6 +74,7 @@ class PaymentController extends Controller
 
         $order = Order::where('mollie_id', $paymentId)->first();
 
+
         if ($order) {
             $order->paid = $payment->isPaid() ? 1 : 0;
             $order->save();
@@ -87,5 +96,6 @@ class PaymentController extends Controller
             session()->forget('cart');
             return view('payment.success');
         }
+        return view('payment.failed');
     }
 }
