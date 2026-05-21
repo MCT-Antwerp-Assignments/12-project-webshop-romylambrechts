@@ -3,10 +3,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mollie\Api\MollieApiClient;
 use App\Models\Order;
-
+use App\Models\Customer;
 
 class PaymentController extends Controller
 {
+
     public function pay(Request $request)
     {
         $cart = session()->get('cart', []);
@@ -16,8 +17,20 @@ class PaymentController extends Controller
             $item['price'] * $item['quantity']
         );
 
+        $customer = Customer::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'email' => $request->email,
+            'street' => $request->street,
+            'nr' => $request->nr,
+            'zip' => $request->zip,
+            'box' => $request->box,
+            'city' => $request->city,
+            'country' => $request->country,
+        ]);
+
         $order = Order::create([
-            'customer_id' => 1,
+            'customer_id' => $customer->id,
             'paid' => 0,
             'total_price' => $total
         ]);
