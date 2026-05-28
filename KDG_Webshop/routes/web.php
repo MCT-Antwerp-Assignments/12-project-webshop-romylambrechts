@@ -21,7 +21,7 @@ Route::get('/checkout', [OrderController::class, 'checkout']);
 Route::post('/checkout', [OrderController::class, 'store']);
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
 Route::post('/payment/pay', [PaymentController::class, 'pay'])->name('payment.pay');
 Route::get('/payment/return/{orderId}', [PaymentController::class, 'return'])->name('payment.return');
