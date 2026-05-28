@@ -16,14 +16,6 @@ class PaymentController extends Controller
             $item['price'] * $item['quantity']
         );
 
-        $existingCustomer = Customer::where('email', $request->email)->first();
-
-        if ($existingCustomer) {
-            return redirect()->back()
-                ->withInput()
-                ->with('error', 'Emailadres bestaat al');
-        }
-
         $customer = Customer::create([
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,
