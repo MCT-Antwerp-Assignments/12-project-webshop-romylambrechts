@@ -11,6 +11,11 @@ class PaymentController extends Controller
     {
         $cart = session()->get('cart', []);
 
+        if (count($cart) == 0) {
+            return redirect()->back()
+                ->with('error', 'Please add something to your cart before checkout');
+        }
+
         $total = collect($cart)->sum(
             fn($item) =>
             $item['price'] * $item['quantity']
