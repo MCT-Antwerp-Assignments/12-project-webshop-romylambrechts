@@ -33,9 +33,9 @@
                   </a>
                 </h3>
 
-                <p class="mt-1 text-sm text-gray-500">
+                <!-- <p class="mt-1 text-sm text-gray-500">
                   Stock: {{ $product->stock }}
-                </p>
+                </p> -->
               </div>
 
               <p class="text-sm font-medium text-gray-900">

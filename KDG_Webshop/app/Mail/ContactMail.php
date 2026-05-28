@@ -33,8 +33,8 @@ class ContactMail extends Mailable
             subject: $this->data['subject'],
             replyTo: [
                 new Address(
-                    $this->data['email']
-                  //  $this->data['name']
+                    $this->data['email'],
+                    $this->data['name'] ?? ''
                 ),
             ],
         );
