@@ -25,7 +25,7 @@
     </main>
 
     <footer class="bg-gray-900 text-white mt-auto">
-        <div class="mx-auto max-w-7xl px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="mx-auto max-w-7xl px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-60">
             <div>
                 <h3 class="text-lg font-semibold">KDG Shop</h3>
                 <p class="mt-2 text-gray-400 text-sm">
