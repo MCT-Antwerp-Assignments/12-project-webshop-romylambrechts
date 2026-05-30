@@ -21,14 +21,15 @@
             <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
                 <div>
                     <div class="aspect-square w-full overflow-hidden rounded-lg bg-gray-100">
-                        <img id="mainImage" src="{{ asset('storage/products/' . trim($photos[0])) }}"
-                            class="h-full w-full object-cover">
+                        <img id="mainImage" src="{{ asset('storage/products/' . trim($photos[0])) }}" loading="lazy"
+                            class="w-full aspect-square object-cover">
                     </div>
 
                     <div class="flex gap-3 mt-4">
                         @foreach($photos as $photo)
                             <img src="{{ asset('storage/products/' . trim($photo)) }}" onclick="changeImage(this)"
-                                class="h-20 w-20 object-cover rounded-md cursor-pointer border hover:opacity-70">
+                                loading="lazy"
+                                class="w-20 h-20 aspect-square object-cover rounded-md cursor-pointer border hover:opacity-70">
                         @endforeach
                     </div>
                 </div>
@@ -39,8 +40,8 @@
                     </div>
 
                     <!--<p class="mt-2 text-sm text-gray-500">
-                        Stock: {{ $product->stock }}
-                    </p> -->
+                            Stock: {{ $product->stock }}
+                        </p> -->
 
                     @if($product->category == 'hoodie')
                         <div class="mt-6">
@@ -54,9 +55,9 @@
                                         <input type="radio" name="size" value="{{ $size }}" id="size_{{ $size }}"
                                             class="hidden peer" required>
                                         <label for="size_{{ $size }}" class="border px-4 py-2 rounded-md text-sm cursor-pointer
-                                          peer-checked:bg-black peer-checked:text-white
-                                          block">
-                                        {{ $size }}
+                                                      peer-checked:bg-black peer-checked:text-white
+                                                      block">
+                                            {{ $size }}
                                         </label>
                                     </div>
                                 @endforeach

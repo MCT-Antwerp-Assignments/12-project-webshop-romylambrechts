@@ -18,7 +18,7 @@
               <a href="/product/{{ $product->id }}" class="block relative overflow-hidden rounded-md">
 
                 @foreach($photos as $index => $photo)
-                  <img src="{{ asset('storage/products/' . trim($photo)) }}"
+                  <img src="{{ asset('storage/products/' . trim($photo)) }}"  loading="lazy"
                     class="product-image aspect-square w-full object-cover lg:h-80 {{ $index != 0 ? 'hidden' : '' }}"
                     alt="{{ $product->name }}">
                 @endforeach
