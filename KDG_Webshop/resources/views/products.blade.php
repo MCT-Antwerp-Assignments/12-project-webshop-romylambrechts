@@ -15,15 +15,15 @@
               $photos = explode(',', $product->photo);
             @endphp
             <div class="relative overflow-hidden rounded-md">
-              
-              @foreach($photos as $index => $photo)
+              <a href="/product/{{ $product->id }}" class="block relative overflow-hidden rounded-md">
 
-                <img src="{{ asset('storage/products/' . trim($photo)) }}"
-                  class="product-image aspect-square w-full object-cover lg:h-80 {{ $index != 0 ? 'hidden' : '' }}"
-                  alt="{{ $product->name }}">
+                @foreach($photos as $index => $photo)
+                  <img src="{{ asset('storage/products/' . trim($photo)) }}"
+                    class="product-image aspect-square w-full object-cover lg:h-80 {{ $index != 0 ? 'hidden' : '' }}"
+                    alt="{{ $product->name }}">
+                @endforeach
 
-              @endforeach
-
+              </a>
             </div>
             <div class="mt-4 flex justify-between">
               <div>
@@ -34,8 +34,8 @@
                 </h3>
 
                 <!-- <p class="mt-1 text-sm text-gray-500">
-                  Stock: {{ $product->stock }}
-                </p> -->
+                      Stock: {{ $product->stock }}
+                    </p> -->
               </div>
 
               <p class="text-sm font-medium text-gray-900">
