@@ -17,7 +17,7 @@
                     <ul role="list" class="border-t border-gray-200">
 
                         @forelse($cart as $cartItem)
-                            <li class="flex py-10">
+                            <li class="flex py-10 border-b border-gray-200 last:border-b-0">
                                 <img src="{{ asset('storage/products/' . $cartItem['image']) }}"
                                     class="h-32 w-32 rounded-lg object-cover" alt="{{ $cartItem['name'] }}">
                                 <div class="ml-6 flex flex-1 flex-col justify-between">

@@ -38,7 +38,7 @@
                         € {{ $product->price }}
                     </div>
 
-                   <!-- <p class="mt-2 text-sm text-gray-500">
+                    <!--<p class="mt-2 text-sm text-gray-500">
                         Stock: {{ $product->stock }}
                     </p> -->
 

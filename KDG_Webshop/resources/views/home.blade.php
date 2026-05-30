@@ -38,7 +38,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach($products as $product)
           <a href="/product/{{ $product->id }}" class="block border rounded-lg overflow-hidden hover:shadow-lg transition">
-            <img src="{{ asset('storage/products/' . explode(',', $product->photo)[0]) }}" class="h-64 w-full object-cover">
+            <img src="{{ asset('storage/products/' . explode(',', $product->photo)[0]) }}" class="h-100 w-full object-cover">
             <div class="p-4">
               <h3 class="font-medium text-gray-900">
                 {{ $product->name }}
