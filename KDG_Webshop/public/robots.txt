@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /
+
+# This is a student project
+# Not intended for indexing or production use
