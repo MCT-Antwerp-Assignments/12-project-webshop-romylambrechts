@@ -10,9 +10,4 @@ class OrderController extends Controller
     {
         return view('checkout');
     }
-
-    public function store(Request $request)
-    {
-        // order opslage en molliee
-    }
 }

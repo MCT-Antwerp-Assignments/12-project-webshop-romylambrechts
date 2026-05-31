@@ -23,7 +23,7 @@ class CartController extends Controller
         $product = \App\Models\Product::findOrFail($request->product_id);
         $cart = session()->get('cart', []);
 
-        $size = $request->size; 
+       // $size = $request->size; 
 
         if (isset($cart[$product->id])) {
             $cart[$product->id]['quantity']++;
@@ -32,7 +32,7 @@ class CartController extends Controller
                 'id' => $product->id,
                 'name' => $product->name,
                 'price' => $product->price,
-                'image' => explode(',', $product->photo)[0] ?? 'default.jpg',
+                'image' => explode(',', $product->photo)[0] ?? 'default.jpg', //neemt eerste foto als er meerdere foto's zijn
                 'quantity' => 1
             ];
         }

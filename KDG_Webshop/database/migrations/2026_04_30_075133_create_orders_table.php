@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('customer_id')-> constrained();;
             $table->timestamp('paid')-> nullable();
-            $table->decimal('total_price', 10, 2);
+            $table->decimal('total_price', 10, 2); //10 = totaal aantal cijfers + 2 = cijfers na komma
             $table->string('mollie_id')-> nullable();
             $table->timestamps();
             $table->softDeletes();
