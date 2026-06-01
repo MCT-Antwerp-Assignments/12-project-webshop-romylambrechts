@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('customer_id')-> constrained();;
-            $table->timestamp('paid')-> nullable();
+            $table->boolean('paid')->default(false);
             $table->decimal('total_price', 10, 2); //10 = totaal aantal cijfers + 2 = cijfers na komma
             $table->string('mollie_id')-> nullable();
             $table->timestamps();
