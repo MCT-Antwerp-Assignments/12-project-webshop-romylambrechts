@@ -21,13 +21,13 @@
             <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
                 <div>
                     <div class="aspect-square w-full overflow-hidden rounded-lg bg-gray-100">
-                        <img id="mainImage" src="{{ asset('storage/products/' . trim($photos[0])) }}" loading="lazy"
+                        <img id="mainImage" src="{{ asset('images/products/' . trim($photos[0])) }}" loading="lazy"
                             class="w-full aspect-square object-cover">
                     </div>
 
                     <div class="flex gap-3 mt-4">
                         @foreach($photos as $photo)
-                            <img src="{{ asset('storage/products/' . trim($photo)) }}" onclick="changeImage(this)"
+                            <img src="{{ asset('images/products/' . trim($photo)) }}" onclick="changeImage(this)"
                                 loading="lazy"
                                 class="w-20 h-20 aspect-square object-cover rounded-md cursor-pointer border hover:opacity-70">
                         @endforeach

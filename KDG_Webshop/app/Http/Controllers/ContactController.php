@@ -24,7 +24,7 @@ class ContactController extends Controller
         $validatedData = $request->validate([
             'subject' => 'required|min:3|max:255',
             'email' => 'required|email',
-            'message' => 'required|min:10', //minstens 10 tekens
+            'message' => 'required|min:1', //minstens 1 teken
         ], $messages);
 
         if ($validatedData) {
